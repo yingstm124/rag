@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.0-pg17
+    container_name: pgvector
+    environment:
+      - POSTGRES_DB=rag_db
+      - POSTGRES_USER=ying
+      - POSTGRES_PASSWORD=admin@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgvector_data:/var/lib/postgresql/data
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
+    container_name: ollama
+    pull_policy: always
+    tty: true
+    restart: always
+    entrypoint: ["/usr/bin/bash", "/entrypoint.sh"]
+
+volumes:
+  pgvector_data:
+  ollama:
