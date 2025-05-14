@@ -2,12 +2,14 @@ import pool from './db.js'
 import { embed } from './transformer.js';
 
 const documents = [
-    "Mycos Technologies values integrity and transparency, offering honest advice, accountable resources, and clear pricing.",
-    "Nook is employee, Position: Software Engineer, Department: IT, Skills: .NET, React, PostgreSQL, Docker.",
-    "Jane Doe is employee, Position: QA Engineer, Department: Quality Assurance, Skills: Manual Testing, Cypress, Jira.",
-    "John Smith is employee, Position: Frontend Developer, Department: UI/UX, Skills: Angular, HTML, CSS, TypeScript.",
-    "Alice Tan is employee, Position: Backend Developer, Department: Development, Skills: Node.js, Express, MongoDB.",
-    "Mark Lee is employee, Position: Project Manager, Department: Operations, Skills: Agile, Scrum, Trello, MS Project."
+ "บริษัท มายคอส จำกัด (myCos Co., Ltd.)\nประกาศเลขที่: HR-2566-04\nวันที่ประกาศใช้: 1 มกราคม พ.ศ. 2566\nประกาศโดย: แผนกทรัพยากรบุคคล (HR Department)",
+ "นโยบายการลา มีลาพักร้อน ลาป่วย ลากิจส่วนตัว ลาคลอดฝลาพักฟื้น/ลาเพื่อครอบครัว",
+ "ลาพักร้อน (Annual Leave) พนักงานที่ทำงานครบ 1 ปี มีสิทธิ์ลาพักร้อน 10 วันต่อปีและเพิ่มขึ้นทุกปี ปีละ 1วัน ต้องแจ้งหัวหน้าทีมล่วงหน้าอย่างน้อย 3 วันทำการ การลาพักร้อนในช่วงวัน Deploy ระบบอาจไม่ได้รับอนุมัติ",
+ "ลาป่วย (Sick Leave) มีสิทธิ์ลาได้ไม่เกิน 30 วันต่อปี หากลาติดต่อกันเกิน 2 วัน ต้องแนบใบรับรองแพทย์และแจ้งผ่านระบบ Intranet หรือแจ้งกับคุณอามทันทีในวันที่ลาป่วย",
+ "ลากิจส่วนตัว (Personal Leave) ได้รับสิทธิ์ 5 วันต่อปีและต้องแจ้งล่วงหน้าอย่างน้อย 1 วัน เว้นแต่มีเหตุฉุกเฉินและไม่สามารถใช้ลากิจเพื่อเดินทางท่องเที่ยวข้ามประเทศ เว้นแต่มีเหตุผลจำเป็น",
+ "ลาคลอด หรือ ลาพักฟื้น หรือ ลาเพื่อครอบครัว ได้รับสิทธิ์ 98 วัน (รวมวันหยุด) โดยยังได้รับเงินเดือนเต็มตามที่กฎหมายกำหนดและสามารถขอลาพักฟื้นหลังคลอดเพิ่มเติมได้อีก 7 วันโดยไม่คิดเป็นวันลาพักร้อน",
+ "วิธีการยื่นคำขอลายื่นที่เว็บไซต์ 1. เข้าสู่ระบบ Intranet: intranet.mycos.co.th 2. ไปที่เมนู “คำขอลา” 3. เลือกประเภทการลา กรอกวันที่ และเหตุผล 4. ระบบจะส่งคำขอไปยังหัวหน้าทีมเพื่ออนุมัติ 5. เมื่อได้รับอนุมัติ พนักงานจะได้รับอีเมลยืนยัน",
+ "สอบถามข้อมูลเพิ่มเติม: ติดต่อแผนก HR ที่อีเมล: hr@mycos.co.th หรือเบอร์ภายใน 102"
 ]
 
 for(const content of documents){
